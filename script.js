@@ -37,7 +37,7 @@ function postCat(cat){
 }
 
 function getAllCats(){
-    $.get('/api/cats', (response)=>{
+    $.get('/api/cat', (response)=>{
         // response's data is in array format, so we can use it
         if (response.statusCode === 200) {
             addCards(response.data);
