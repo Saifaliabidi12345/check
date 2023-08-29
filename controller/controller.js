@@ -10,6 +10,7 @@ const postCat = (req, res) => {
     });
 };
 
+
 const getAllCats = (req, res) => {
     collection.getAllCats((err, result) => {
         if (!err) {
@@ -18,9 +19,20 @@ const getAllCats = (req, res) => {
     });
 };
 
+
+const deleteCat = (req, res) => {
+    let cat = req.body;
+    collection.deleteCat(cat, (err, result) => {
+        if (!err) {
+            res.json({ statusCode: 202, data: result, message: 'success' });
+        }
+    });
+};
+
 module.exports = {
     postCat: postCat,
-    getAllCats: getAllCats
+    getAllCats: getAllCats,
+    deleteCat : deleteCat
 };
 
 

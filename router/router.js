@@ -12,4 +12,8 @@ router.get('/', (req, res) => {
     controller.getAllCats(req, res);
 });
 
+router.delete('/', function (req, res) {
+    controller.deleteCat(req, res);
+});
+
 module.exports = router;
